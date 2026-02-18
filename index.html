@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026년 조직의 AI 도입 및 활용 현황 설문조사</title>
+    <meta name="description" content="조직의 AI 도입 및 활용 현황 파악, AI 시대 인재 육성 방향 및 교육 수요 분석을 위한 설문조사">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text">
+            <span id="progressPart">Part 1 / 12</span>
+            <span id="progressPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="테마 변경">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <main class="survey-container">
+        <!-- Survey Header -->
+        <header class="survey-header">
+            <div class="header-badge">한국ASI협회(KASIA)</div>
+            <h1 class="survey-title">2026년 조직의 AI 도입 및 활용 현황 설문조사</h1>
+            <div class="survey-meta">
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>2026년 2월 19일 ~ 3월 13일</span>
+                </div>
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>대한민국 소재 기업, 공공기관, 대학 등</span>
+                </div>
+            </div>
+            <p class="survey-description">
+                조직의 AI 도입 및 활용 현황 파악, AI 시대 인재 육성 방향 및 교육 수요 분석을 위한 설문조사입니다.
+                응답해 주신 내용은 통계 목적으로만 활용되며, 개별 응답은 공개되지 않습니다.
+            </p>
+        </header>
+
+        <!-- Survey Form -->
+        <form id="surveyForm" class="survey-form">
+            <div id="surveyContent"></div>
+
+            <!-- Navigation -->
+            <div class="survey-navigation">
+                <button type="button" class="nav-btn nav-prev" id="prevBtn" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                    이전
+                </button>
+                <div class="nav-dots" id="navDots"></div>
+                <button type="button" class="nav-btn nav-next" id="nextBtn">
+                    다음
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+                <button type="submit" class="nav-btn nav-submit" id="submitBtn" style="display: none;">
+                    제출하기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+            </div>
+            <h2>설문이 완료되었습니다!</h2>
+            <p>소중한 의견에 감사드립니다.<br>응답해 주신 내용은 대한민국 조직의 AI 현황을 파악하고,<br>AI 시대 인재 육성 및 교육 프로그램 개발에 참고하는 데 활용됩니다.</p>
+            <button class="modal-btn" onclick="location.reload()">처음으로</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
